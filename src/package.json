@@ -1,8 +1,12 @@
 {
     "name": "36-books-demo-navigation-component-and-routing",
     "main": "src/index.jsx",
+    "scripts": {
+        "test": "echo\"Error: no test specified\" && exit 1",
+        "start": "parcel src/index.html",
+        "build": "parcel build src/index.html"
+    },
     "dependencies": {
-        "@parcel/transformer-sass": "^2.9.3",
         "bootstrap": "5.2.0",
         "prop-types": "15.8.1",
         "react": "18.0.0",
@@ -15,6 +19,7 @@
     "keywords": [],
     "description": "",
     "devDependencies": {
+        "@parcel/transformer-sass": "^2.9.3",
         "parcel": "^2.9.3",
         "parcel-bundler": "^1.12.3"
     }
