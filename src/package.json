@@ -1,6 +1,8 @@
 {
     "name": "36-books-demo-navigation-component-and-routing",
     "main": "src/index.jsx",
+    "description": "",
+    "source": "src/index.html",
     "scripts": {
         "test": "echo\"Error: no test specified\" && exit 1",
         "start": "parcel src/index.html",
@@ -17,7 +19,6 @@
         "react-scripts": "4.0.0"
     },
     "keywords": [],
-    "description": "",
     "devDependencies": {
         "@parcel/transformer-sass": "^2.9.3",
         "parcel": "^2.9.3",
