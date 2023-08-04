@@ -1,6 +1,6 @@
 {
     "name": "36-books-demo-navigation-component-and-routing",
-    "main": "src/index.jsx",
+    /*"main": "src/index.jsx",*/
     "description": "",
     "source": "src/index.html",
     "scripts": {
