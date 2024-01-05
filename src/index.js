@@ -1,4 +1,4 @@
-const corse = require('cors');
+const cors = require('cors');
 let allowedOrigins = [...];
 
 app.use(cors({
