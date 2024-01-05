@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-export const LoginView = ({ onLoggedIn }) => {
+
+export const LoginView = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -20,7 +21,7 @@ export const LoginView = ({ onLoggedIn }) => {
             body: JSON.stringify(data)
         }).then((response) => {
             if (response.ok) {
-                onLoggedIn(username);
+                dispatchEvent(setUser(username));
             } else {
                 alert("Login failed");
             }

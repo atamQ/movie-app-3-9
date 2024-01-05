@@ -12,8 +12,8 @@ import { setBooks } from "../../redux/reducers/books";
 //username: 167OLdP5BUfLZGxP **** password: K39eKYhPMV9DDWhJ
 
 export const MainView = () => {
-    const books = useSelector((state) => state.books);
-    const [user, setUser] = useState(null);
+    const books = useSelector((state) => state.books.list);
+    const user = useSelector((state) => state.user);
 
     const dispatch = useDispatch();
 
@@ -36,12 +36,8 @@ export const MainView = () => {
 
     return (
         <BrowserRouter>
-            <NavigationBar
-                user={user}
-                onLoggedOut={() => {
-                    setUser(null);
-                }}
-            />
+            <NavigationBar />
+
             <Row className="justify-content-md-center">
                 <Routes>
                     <Route
@@ -66,7 +62,7 @@ export const MainView = () => {
                                     <Navigate to="/" />
                                 ) : (
                                     <Col md={5}>
-                                        <LoginView onLoggedIn={(user) => setUser(user)} />
+                                        <LoginView />
                                     </Col>
                                 )}
                             </>
@@ -93,19 +89,15 @@ export const MainView = () => {
                         path="/"
                         element={
                             <>
-                                {!user ? (
+                                {!user ?
                                     <Navigate to="/login" replace />
-                                ) : books.length === 0 ? (
-                                    <Col>The list is empty!</Col>
-                                ) : (
-                                    <>
-                                        {books.map((book) => (
-                                            <Col className="mb-4" key={book.id} md={3}>
-                                                <BookCard book={book} />
-                                            </Col>
-                                        ))}
-                                    </>
-                                )}
+                                    : books.length === 0 ? (
+                                        <Col>The list is empty!</Col>
+                                    ) :
+                                        <>
+                                            <BooksList />
+                                        </>
+                                }
                             </>
                         }
                     />
