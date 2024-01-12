@@ -16,5 +16,5 @@ const booksSlice = createSlice({ //CreatSlice is a function that accepts an init
     }
 });
 
-export const { setBooks, setFilter } = bookSlice.actions;
+export const { setBooks, setFilter } = booksSlice.actions;
 export default booksSlice.reducer;
